@@ -1,0 +1,316 @@
+:root {
+  --primary-color: #4a6fa5;
+  --secondary-color: #6c8fc7;
+  --background-color: #f5f7fa;
+  --text-color: #2c3e50;
+  --border-color: #e1e4e8;
+  --shadow-color: rgba(0, 0, 0, 0.1);
+  
+  /* Room colors - 8 unique colors */
+  --room1-bg: #e3f2fd;
+  --room1-border: #90caf9;
+  --room2-bg: #f3e5f5;
+  --room2-border: #ce93d8;
+  --room3-bg: #e8f5e9;
+  --room3-border: #a5d6a7;
+  --room4-bg: #fff3e0;
+  --room4-border: #ffcc80;
+  --room5-bg: #ffebee;
+  --room5-border: #ef9a9a;
+  --room6-bg: #e0f7fa;
+  --room6-border: #80deea;
+  --room7-bg: #f1f8e9;
+  --room7-border: #c5e1a5;
+  --room8-bg: #fce4ec;
+  --room8-border: #f48fb1;
+}
+
+body {
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+  margin: 0;
+  padding: 15px;
+  background-color: var(--background-color);
+  color: var(--text-color);
+  text-align: center;
+  -webkit-text-size-adjust: 100%;
+  -webkit-tap-highlight-color: transparent;
+}
+
+h1 {
+  color: var(--primary-color);
+  margin-bottom: 20px;
+  font-size: clamp(1.8rem, 5vw, 2.5rem);
+  padding: 0 10px;
+}
+
+.rooms {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 15px;
+  margin-top: 20px;
+  padding: 0 10px;
+}
+
+.room {
+  background: white;
+  border: 1px solid var(--border-color);
+  border-radius: 12px;
+  width: calc(100% - 30px);
+  max-width: 400px;
+  min-height: 120px;
+  padding: 15px;
+  box-shadow: 0 2px 4px var(--shadow-color);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+#room1, #room2, #room3, #room4 {
+  background: white;
+  border-color: var(--border-color);
+}
+
+/* Add dynamic room color classes */
+.room-color-1 {
+  background: var(--room1-bg) !important;
+  border-color: var(--room1-border) !important;
+}
+.room-color-2 {
+  background: var(--room2-bg) !important;
+  border-color: var(--room2-border) !important;
+}
+.room-color-3 {
+  background: var(--room3-bg) !important;
+  border-color: var(--room3-border) !important;
+}
+.room-color-4 {
+  background: var(--room4-bg) !important;
+  border-color: var(--room4-border) !important;
+}
+.room-color-5 {
+  background: var(--room5-bg) !important;
+  border-color: var(--room5-border) !important;
+}
+.room-color-6 {
+  background: var(--room6-bg) !important;
+  border-color: var(--room6-border) !important;
+}
+.room-color-7 {
+  background: var(--room7-bg) !important;
+  border-color: var(--room7-border) !important;
+}
+.room-color-8 {
+  background: var(--room8-bg) !important;
+  border-color: var(--room8-border) !important;
+}
+
+.room h3 {
+  margin-top: 0;
+  color: var(--primary-color);
+  border-bottom: 2px solid var(--border-color);
+  padding-bottom: 8px;
+  text-align: center;
+  font-size: 1.2rem;
+  margin-bottom: 12px;
+}
+
+.room ul {
+  list-style: none;
+  padding: 0;
+  margin: 8px 0;
+}
+
+.room li {
+  padding: 8px;
+  margin: 6px 0;
+  background-color: rgba(255, 255, 255, 0.8);
+  border-radius: 6px;
+  transition: all 0.3s ease;
+  box-shadow: 0 1px 2px rgba(0, 0, 0, 0.05);
+  text-align: center;
+  font-weight: 500;
+  font-size: 0.95rem;
+}
+
+.room li:hover {
+  transform: translateX(5px);
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.room-color-1 li:hover {
+  background-color: var(--room1-border);
+  color: white;
+}
+.room-color-2 li:hover {
+  background-color: var(--room2-border);
+  color: white;
+}
+.room-color-3 li:hover {
+  background-color: var(--room3-border);
+  color: white;
+}
+.room-color-4 li:hover {
+  background-color: var(--room4-border);
+  color: white;
+}
+.room-color-5 li:hover {
+  background-color: var(--room5-border);
+  color: white;
+}
+.room-color-6 li:hover {
+  background-color: var(--room6-border);
+  color: white;
+}
+.room-color-7 li:hover {
+  background-color: var(--room7-border);
+  color: white;
+}
+.room-color-8 li:hover {
+  background-color: var(--room8-border);
+  color: white;
+}
+
+.hidden {
+  display: none;
+}
+
+input[type="text"],
+input[type="number"] {
+  width: 100%;
+  max-width: 300px;
+  padding: 12px;
+  margin: 8px auto;
+  border: 2px solid var(--border-color);
+  border-radius: 8px;
+  font-size: 16px;
+  transition: border-color 0.3s ease;
+  -webkit-appearance: none;
+  appearance: none;
+}
+
+input[type="text"]:focus,
+input[type="number"]:focus {
+  outline: none;
+  border-color: var(--primary-color);
+}
+
+button {
+  background-color: var(--primary-color);
+  color: white;
+  border: none;
+  padding: 12px 20px;
+  border-radius: 8px;
+  font-size: 16px;
+  cursor: pointer;
+  transition: background-color 0.3s ease, transform 0.2s ease;
+  margin: 8px 0;
+  width: 100%;
+  max-width: 300px;
+  -webkit-appearance: none;
+  appearance: none;
+  touch-action: manipulation;
+}
+
+button:hover {
+  background-color: var(--secondary-color);
+  transform: scale(1.02);
+}
+
+#input-section,
+#setup-section {
+  max-width: 400px;
+  margin: 0 auto;
+  padding: 20px;
+  background: white;
+  border-radius: 12px;
+  box-shadow: 0 2px 4px var(--shadow-color);
+}
+
+#assignment-section {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 20px;
+}
+
+#status {
+  font-size: 1rem;
+  color: var(--primary-color);
+  margin: 15px 0;
+  font-weight: 500;
+  padding: 0 10px;
+}
+
+.setup-input {
+  margin: 12px 0;
+}
+
+.setup-input label {
+  display: block;
+  margin-bottom: 5px;
+  font-weight: 500;
+  color: var(--primary-color);
+  font-size: 0.95rem;
+}
+
+.action-buttons {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  justify-content: center;
+  margin: 15px 0;
+  padding: 0 10px;
+}
+
+#save-button {
+  background-color: #4CAF50;
+}
+
+#save-button:hover {
+  background-color: #45a049;
+}
+
+/* iPhone specific optimizations */
+@supports (-webkit-touch-callout: none) {
+  body {
+    padding: env(safe-area-inset-top) env(safe-area-inset-right) env(safe-area-inset-bottom) env(safe-area-inset-left);
+  }
+  
+  button {
+    padding: 14px 20px;
+  }
+  
+  .room {
+    min-height: 100px;
+  }
+}
+
+/* Landscape mode adjustments */
+@media (orientation: landscape) {
+  .rooms {
+    flex-direction: row;
+    flex-wrap: wrap;
+  }
+  
+  .room {
+    width: calc(50% - 20px);
+    min-width: 200px;
+  }
+}
+
+/* Larger screens */
+@media (min-width: 768px) {
+  body {
+    padding: 20px;
+  }
+  
+  .action-buttons {
+    flex-direction: row;
+  }
+  
+  button {
+    width: auto;
+  }
+  
+  .room {
+    width: calc(33.333% - 20px);
+  }
+} 

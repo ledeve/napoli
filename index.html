@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Room Assignment</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <h1>Random Room Assignment</h1>
+
+  <div id="setup-section">
+    <div class="setup-input">
+      <label for="numNames">Number of Names:</label>
+      <input type="number" id="numNames" min="1" value="7">
+    </div>
+    <div class="setup-input">
+      <label for="numRooms">Number of Rooms:</label>
+      <input type="number" id="numRooms" min="1" value="4">
+    </div>
+    <button onclick="initializeInputs()">Continue</button>
+  </div>
+
+  <div id="input-section" class="hidden">
+    <p>Enter names:</p>
+    <div id="name-inputs">
+      <!-- Inputs will be generated dynamically -->
+    </div>
+    <button onclick="loadDefaultNames()">Load Default Names</button>
+    <button onclick="startAssignment()">Start Assignment</button>
+  </div>
+
+  <div id="assignment-section" class="hidden">
+    <button onclick="assignNext()">Assign Next Person</button>
+    <p id="status"></p>
+    <div class="action-buttons">
+      <button id="restart-button" class="hidden" onclick="restartApp()">Start Over</button>
+      <button id="save-button" class="hidden" onclick="saveAssignments()">Save Assignments</button>
+    </div>
+
+    <div class="rooms" id="rooms-container">
+      <!-- Rooms will be generated dynamically -->
+    </div>
+  </div>
+
+  <script src="https://cdn.jsdelivr.net/npm/canvas-confetti@1.6.0/dist/confetti.browser.min.js"></script>
+  <script src="script.js"></script>
+</body>
+</html>
